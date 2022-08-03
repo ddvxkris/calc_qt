@@ -376,6 +376,7 @@ class Ui_MainWindow(object):
         if is_action and self.current_operand == 2 and not self.last_was_action:
             print(is_action, self.current_operand, self.last_was_action)
             if self.calculate():
+                self.current_sequence.action = char
                 self.current_operand = 2
                 self.last_was_action = True
                 self.result.setText(f"{self.current_sequence.first}{self.current_sequence.action}{self.current_sequence.second}")
